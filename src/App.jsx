@@ -4,8 +4,19 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile";
+import styled from "styled-components";
 import AccountDetails from "./pages/AccountDetails";
 
+const AppScaler = styled.div`
+  zoom: 75%; 
+  @supports not (zoom: 75%) {
+    transform: scale(0.75);
+    transform-origin: top center;
+    width: 133.33%; /
+  }
+
+  min-height: 100vh;
+`;
 
 /* 🔐 Protected Route */
 const ProtectedRoute = ({ children }) => {
@@ -16,6 +27,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   return (
+    <AppScaler>
     <Routes>
       {/* Default Route */}
       <Route path="/" element={<Navigate to="/login" replace />} />
@@ -40,6 +52,7 @@ function App() {
       {/* Catch all */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
+  </AppScaler>
   );
 }
 
