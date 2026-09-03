@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { FaUserCircle, FaEnvelope } from "react-icons/fa";
 import logo from "../assets/vskill-logo.png";
+import loginBg from '../assets/login_bg.jpg';
 
 /* ---------- Layout ---------- */
 
@@ -12,7 +13,7 @@ const Container = styled.div`
   min-height: 100vh;
  
   background: 
-    url("/src/assets/login_bg.jpg");
+    url(${loginBg});
 
   background-size: cover;
   background-position: center;
